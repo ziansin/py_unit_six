@@ -22,3 +22,13 @@ def get_min(numbers):
     :return: The smallest number in the list
     """
     pass # remove this line when starting your function
+
+
+def merge(list1, list2):
+    """
+    Ex. merge([3, 4, 7, 9], [1, 5, 8, 11]) return [1, 3, 4, 5, 7, 8, 9, 11]
+    :param list1: a list in sorted order
+    :param list2: a second list in sorted order
+    :return: a single list consisting of both smaller lists combined in sorted order.
+    """
+    pass # remove this line when starting your function
