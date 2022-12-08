@@ -6,14 +6,9 @@ def swap(list_one):
     """
     num = len(list_one)
     if num > 2:
-        list_one = list_one[-1], list_one[1:(num - 1)], list_one[0]
+        list_one = [list_one[-1], list_one[1:(num - 1)], list_one[0]]
     else:
-        list_one = list_one[-1], list_one[0]
-    list_one = str(list_one)
-    list_one = list_one.replace("[", "")
-    list_one = list_one.replace("]", "")
-    list_one = list_one.replace("(", "[")
-    list_one = list_one.replace(")", "]")
+        list_one = [list_one[-1], list_one[0]]
     return list_one
 
 list1 = [1, 2, 3, 4]
@@ -26,12 +21,7 @@ def rotate_left(list_one):
     :return: a list where all the elements have been shifted 1 place to the left
     """
     num = len(list_one)
-    list_one = list_one[1:(num - 1)], list_one[-1], list_one[0]
-    list_one = str(list_one)
-    list_one = list_one.replace("[", "")
-    list_one = list_one.replace("]", "")
-    list_one = list_one.replace("(", "[")
-    list_one = list_one.replace(")", "]")
+    list_one = [list_one[1:(num - 1)], list_one[-1], list_one[0]]
     return list_one
 
 list2 = [1, 2, 3, 4]
@@ -44,4 +34,12 @@ def max_end(list_one):
     :param list_one: A list consisting of three elements - all integers
     :return: A list where all the elements are the larger of the first or last element of the original list
     """
-    pass # make sure to remove this line before beginning work on this function
+    num = len(list_one)
+    if list_one[0] > list_one[2]:
+        list_one = [list_one[0], list_one[0], list_one[0]]
+    elif list_one[2] > list_one[0]:
+        list_one = [list_one[2], list_one[2], list_one[2]]
+    return list_one
+
+list3 = [11, 5, 9]
+print(max_end(list3))
