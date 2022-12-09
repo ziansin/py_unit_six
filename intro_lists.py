@@ -6,7 +6,9 @@ def swap(list_one):
     """
     num = len(list_one)
     if num > 2:
-        list_one = [list_one[-1], list_one[1:(num - 1)], list_one[0]]
+        x = list_one[0]
+        list_one[0] = list_one[-1]
+        list_one[-1] = x
     else:
         list_one = [list_one[-1], list_one[0]]
     return list_one
@@ -21,7 +23,9 @@ def rotate_left(list_one):
     :return: a list where all the elements have been shifted 1 place to the left
     """
     num = len(list_one)
-    list_one = [list_one[1:(num - 1)], list_one[-1], list_one[0]]
+    x = list_one[0]
+    list_one[0:(num-1)] = list_one[1:num]
+    list_one[-1] = x
     return list_one
 
 list2 = [1, 2, 3, 4]
