@@ -5,7 +5,13 @@ def add_numbers(numbers):
     :param numbers: a list of numbers
     :return: the sum of all the numbers in the list
     """
-    pass # remove this line when starting your function
+    sum = 0
+    for number in numbers:
+        sum = sum + number
+    return sum
+
+list1 = [1, 2, 3, 4, 5, 6]
+print(add_numbers(list1))
 
 def get_max(numbers):
     """
@@ -13,7 +19,14 @@ def get_max(numbers):
     :param numbers: a list of numbers
     :return: The largest number in the list
     """
-    pass # remove this line when starting your function
+    max = numbers[0]
+    for number in numbers:
+        if number > max:
+            max = number
+    return max
+
+list1 = [1, 2, 3, 4, 5, 6]
+print(get_max(list1))
 
 def get_min(numbers):
     """
@@ -21,7 +34,14 @@ def get_min(numbers):
     :param numbers: a list of numbers
     :return: The smallest number in the list
     """
-    pass # remove this line when starting your function
+    min = numbers[0]
+    for number in numbers:
+        if number < min:
+            min = number
+    return min
+
+list1 = [1, 2, 3, 4, 5, 6]
+print(get_min(list1))
 
 
 def merge(list1, list2):
@@ -31,4 +51,19 @@ def merge(list1, list2):
     :param list2: a second list in sorted order
     :return: a single list consisting of both smaller lists combined in sorted order.
     """
-    pass # remove this line when starting your function
+    list = []
+    min1 = 0
+    min2 = 0
+    while min1 < len(list1) and min2 < len(list2):
+        if list1[min1] < list2[min2]:
+            list.append(list1[min1])
+            min1 = min1 + 1
+        else:
+            list.append(list2[min2])
+            min2 = min2 + 1
+    list += list1[min1:] + list2[min2:]
+    return list
+
+list_one = [1, 2, 4, 5]
+list_two = [3, 6, 7, 8]
+print(merge(list_one, list_two))

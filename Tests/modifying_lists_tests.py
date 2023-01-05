@@ -19,6 +19,7 @@ class MyTestCase(unittest.TestCase):
         expected = [9, 9, 9, 9]
         self.assertEqual(expected, modifying_lists.find_odds(sample))
 
+
     def test_remove_duplicates_1(self):
         sample = [1, 1, 2, 2, 3, 4, 4, 5, 5, 5, 6]
         expected = [1, 2, 3, 4, 5, 6]
