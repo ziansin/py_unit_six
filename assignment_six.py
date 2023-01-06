@@ -41,6 +41,6 @@ def main():
         if is_duplicates(get_birthdays()) == True:
             duplicates += 1                             # if there is a duplicate in the class, the number of classes with duplicates is increased by 1
     print(duplicates, "times there were at least two of the same birthday")
-    print("It's about", round((duplicates/int(tests)), 3) * 100, "percent of the time")     # the percentage (rounded to 3 significant figures) of times that there were duplicates birthdays out of the number of simulations ran
+    print("It's about", round(((duplicates/int(tests)) * 100), 1), "percent of the time")     # the percentage (rounded to 3 significant figures) of times that there were duplicates birthdays out of the number of simulations ran
 
 main()
