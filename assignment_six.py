@@ -16,11 +16,11 @@ def get_birthdays():
 def is_duplicates(list):
     """
     :param list: the list of birthdays from the get_birthdays function
-    :return: whether or not there were any duplicate birthdays
+    :return: whether there were any duplicate birthdays. true if yes, false if no
     """
     falses = 0                                          # the number of times that a birthday was not the same as any other birthday
     for day in list:
-        if list.count(day) >= 2:                        # checks if there are more than two of a certain birthday
+        if list.count(day) > 1:                         # checks if there are more than two of a certain birthday
             return True
         else:
             falses += 1
