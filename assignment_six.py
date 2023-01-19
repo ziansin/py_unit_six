@@ -2,6 +2,7 @@
 # 1/5/23
 # Function for simulating classes of 23 students and their birthdays to prove the Birthday Paradox
 
+
 import random
 def get_birthdays():
     """
@@ -18,14 +19,12 @@ def is_duplicates(list):
     :param list: the list of birthdays from the get_birthdays function
     :return: whether there were any duplicate birthdays. true if yes, false if no
     """
-    falses = 0                                          # the number of times that a birthday was not the same as any other birthday
+    x = 0
     for day in list:
-        if list.count(day) > 1:                         # checks if there are more than two of a certain birthday
-            return True
-        else:
-            falses += 1
-        if falses == 23:                                # checks if all 23 birthdays did not have any duplicates
-            return False
+        x += 1
+        for days in list[x:-1]:
+            if day == days:
+                return True
 
 def main():
     while True:
@@ -34,6 +33,8 @@ def main():
         except ValueError:
             print("Not an integer")                     # if the user input is not an integer, it will prompt the user to answer again
             continue
+        if tests <= 0:
+            print("Needs to be more than 0")
         else:
             break
     duplicates = 0                                      # the number of times a class of 23 students had duplicate birthdays
